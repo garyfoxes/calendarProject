@@ -189,6 +189,7 @@ var Calendar = function(currentMonth,currentYear,currentDaysInMonth,forMonthlyVi
  	if(this.firstDay > 0 && currentRow === 1 && currentColumn < this.firstDay){
  		cell.innerHTML = this.previousMonthDaysStartNumber;
  		this.previousMonthDaysStartNumber++;
+ 		cell.removeAttribute("data-popup-open");
  		cell.setAttribute("class","previous");
  	}
  	else if(this.currentMonthDay >= 0){
@@ -204,6 +205,7 @@ var Calendar = function(currentMonth,currentYear,currentDaysInMonth,forMonthlyVi
  	}
  	else{
  		cell.setAttribute("class","next");
+ 		cell.removeAttribute("data-popup-open");
  		cell.innerHTML = this.nextMonthDays - this.nextMonthDay;
  		this.nextMonthDay--;
  	}
