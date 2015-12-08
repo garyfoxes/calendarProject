@@ -63,20 +63,17 @@ var Calendar = function(currentMonth,currentYear,currentDaysInMonth,forMonthlyVi
  		this.yearForwardArrow.onclick = this.generateYearData.bind(this,true);
  		this.yearBackArrow.onclick = this.generateYearData.bind(this,false);
  	}
- 	else{
-
- 	}
-
-
- 	this.styleTable(container,forMonthlyView);
+     this.styleTable(container,forMonthlyView);
 
  	var tableRowLength = this.table.rows.length;
  	for(var rowIndex = 1;rowIndex < 7; rowIndex++){
  		var newRow = this.table.insertRow(tableRowLength);
  		for(var colIndex = 0;colIndex< 7;colIndex++){
  			var newCell = newRow.insertCell(colIndex);
- 		}
+ 			newCell.setAttribute("data-popup-open","popup-1");
+ 			newCell.onclick = openEventModal.bind(newCell,this.year,this.month);
  	}
+ }
  	this.calenderDiv.appendChild(this.table);
 
  	var tableHeader = this.table.createTHead();
@@ -239,5 +236,20 @@ var Calendar = function(currentMonth,currentYear,currentDaysInMonth,forMonthlyVi
 
  document.getElementById("btnYearlyView").onclick = function(){
  	calendarStore.singleViewCalendar.calenderDiv.style.display ="none";
- 	initYearlyView(currentYear);
+ 	if(calendarStore.multiViewCalendar.length > 0){
+ 		for(var position in calendarStore.multiViewCalendar){
+ 			calendarStore.multiViewCalendar[position].calenderDiv.style.display ="block";
+ 		}
+ 	}
+ 	else{
+ 		initYearlyView(currentYear);
+ 	}
  }
+ document.getElementById("btnWeeklyView").onclick = function(){
+ 	for(var position in calendarStore.multiViewCalendar){
+ 			calendarStore.multiViewCalendar[position].calenderDiv.style.display ="none";
+ 		}
+ 	calendarStore.singleViewCalendar.calenderDiv.style.display ="block";	
+ 	
+ }
+
