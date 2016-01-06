@@ -93,19 +93,19 @@ Calendar.prototype.generateMonthlyView = function(forMonthlyView) {
 
 Calendar.prototype.styleTable = function(container, forMonthlyView) {
 
-    this.calenderDiv.className = (forMonthlyView) ? "monthlyView" : "monthForYearView"
-    this.calenderDiv.setAttribute("id", "monthlyView");
+    this.calenderDiv.className = (forMonthlyView) ? "monthly__view" : "month__for__yearview"
+    this.calenderDiv.setAttribute("id", "monthly__view");
     this.calenderDiv.className += " effect8";
     fragment.appendChild(this.calenderDiv);
 
 
     this.yearDiv.setAttribute("id", "yearHeader");
-    this.yearDiv.setAttribute("class", "calendarHeaderYear");
+    this.yearDiv.setAttribute("class", "calendar__header__year");
     this.yearDiv.innerHTML = this.year;
     this.calenderDiv.appendChild(this.yearDiv);
 
     this.monthDiv.setAttribute("id", "monthHeader");
-    this.monthDiv.setAttribute("class", "calendarHeaderMonth");
+    this.monthDiv.setAttribute("class", "calendar_header_month");
     this.monthDiv.innerText = monthNames[this.month];
     this.calenderDiv.appendChild(this.monthDiv);
     this.table.setAttribute("id", "table");

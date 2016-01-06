@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="calenderStyle.css">
-	<title>Page Title</title>
-	</head>
-	<body>
-	<div id="container" class ="centred">
-		
+<html>
 
-	</div>
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/calenderStyle.css">
+    <title>Page Title</title>
+</head>
 
-	<div class="text-center">
-		<button type="button" id="btnYearlyView" class="btn btn-primary">Yearly View</button>
-		<button type="button" id="btnWeeklyView" class="btn btn-primary">Weekly View</button>
-	</div>
- 
-<div class="popup" id data-popup="popup-1">
-    <div class="popup-inner">
-        <h2 id ="eventHeader">Store Event</h2>
-     <textarea id="eventMessage" rows="4" cols="50" placeholder="Add Event here..."></textarea> 
-        <p><a data-popup-close="popup-1" href="#" id ="save">Save</a></p>
-        <a class="popup-close" data-popup-close="popup-1" href="#" id="close">x</a>
+<body>
+    <div id="container" class="centred">
     </div>
-</div>
-	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="calender.js" ></script>
-	<script type="text/javascript" src="event.js" ></script>
-	</body>
-	</html>
+    <div class="text-center">
+        <button type="button" id="btnYearlyView" class="btn btn-primary">Yearly View</button>
+        <button type="button" id="btnWeeklyView" class="btn btn-primary">Weekly View</button>
+    </div>
+    <div class="popup" id data-popup="popup-1">
+        <div class="popup-inner">
+            <h2 id="eventHeader">Store Event</h2>
+            <textarea id="eventMessage" rows="4" cols="50" placeholder="Add Event here..."></textarea>
+            <p><a data-popup-close="popup-1" href="#" id="save">Save</a></p>
+            <a class="popup-close" data-popup-close="popup-1" href="#" id="close">x</a>
+        </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/calender.js"></script>
+    <script type="text/javascript" src="js/event.js"></script>
+</body>
 
+</html>
